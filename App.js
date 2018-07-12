@@ -89,6 +89,9 @@ export default class App extends Component {
     return markers
   }
 
+  onMapFinishedRendering = () => {
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -96,7 +99,9 @@ export default class App extends Component {
             styleURL={Mapbox.StyleURL.Street}
             zoomLevel={10}
             centerCoordinate={[-122.4194, 37.7749]}
-            style={styles.container}>
+            style={styles.container}
+            onDidFinishRenderingMapFully={this.onMapFinishedRendering}
+            >
 
             { this.renderMarkers() }
         </Mapbox.MapView>

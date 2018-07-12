@@ -7,6 +7,8 @@ buildscript {
             url 'https://maven.google.com/'
             name 'Google'
         }
+        maven { url "$rootDir/../node_modules/react-native/android" }
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
